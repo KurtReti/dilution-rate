@@ -57,11 +57,12 @@ function App() {
     setSolutionVolume(solutionVolumeNew);
     setWaterVolume(waterVolumeNew);
   };
+  
   return (
-    <div className="w-screen h-screen flex flex-col-reverse justify-center items-center font-mono">
-      <div className="h-screen  w-full flex flex-col items-center rounded-md">
+    <div className="w-full flex flex-col-reverse justify-center items-center font-mono">
+      <div className="h-[calc(50dvh)]  w-full flex flex-col items-center rounded-md">
         <div
-          className="w-full text-center bg-sky-200 relative flex items-center justify-center"
+          className="w-full text-center bg-sky-200 transition-all ease-in-out relative flex items-center justify-center"
           ref={ref2}
         >
           <div className="text-sm">
@@ -73,7 +74,7 @@ function App() {
           </div>
         </div>
         <div
-          className="w-full text-center bg-green-400 relative flex items-center justify-center"
+          className="w-full text-center bg-green-400 transition-all ease-in-out relative flex items-center justify-center"
           ref={ref}
         >
           <div className="text-sm">
@@ -106,12 +107,12 @@ function App() {
             type="text"
             className="h-full w-1/2 text-2xl pr-1 text-center border-b-2 border-black text-md select-text placeholder-slate-300"
             defaultValue="1"
-            maxLength={4}
+            maxLength={3}
             onChange={handleChange}
           ></input>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center">
+      <div className="h-10 flex flex-row items-center justify-center">
         <h3>Volume: </h3>
         <input
           className="mx-1 w-16 px-2 border-b border-black"
@@ -123,7 +124,7 @@ function App() {
         ></input>
         <p>ml</p>
       </div>
-      <h1 className="p-4 font-bold text-lg">Dilution Rate Visual Calculator</h1>
+      <h1 className="p-4 h-24 font-bold text-lg">Dilution Rate Visual Calculator</h1>
     </div>
   );
 }
