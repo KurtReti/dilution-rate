@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/dilution-rate/static/css/main.9a669a32.css",
-    "main.js": "/dilution-rate/static/js/main.e82dac65.js",
+    "main.css": "/dilution-rate/static/css/main.c2b472f4.css",
+    "main.js": "/dilution-rate/static/js/main.eaceb5c8.js",
     "index.html": "/dilution-rate/index.html",
-    "main.9a669a32.css.map": "/dilution-rate/static/css/main.9a669a32.css.map",
-    "main.e82dac65.js.map": "/dilution-rate/static/js/main.e82dac65.js.map"
+    "main.c2b472f4.css.map": "/dilution-rate/static/css/main.c2b472f4.css.map",
+    "main.eaceb5c8.js.map": "/dilution-rate/static/js/main.eaceb5c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a669a32.css",
-    "static/js/main.e82dac65.js"
+    "static/css/main.c2b472f4.css",
+    "static/js/main.eaceb5c8.js"
   ]
 }
