@@ -25,18 +25,18 @@ function App() {
     calculateRatio(dilutionLeft, dilutionRight);
   }, [dilutionLeft, dilutionRight]);
 
-  useEffect(()  => {
-    handleVolume()
-  }, [ratio, remainder])
-    
+  useEffect(() => {
+    handleVolume();
+  }, [ratio, remainder]);
+
   const handleHeight = (height) => {
     setHeight(height);
-    ref.current.style.height = height + "%";
+    ref.current.style.height = height*50 + "%";
   };
 
   const handleHeight2 = (height) => {
     setHeight2(height);
-    ref2.current.style.height = height + "%";
+    ref2.current.style.height = height*50 + "%";
   };
 
   const calculateRatio = (left, right) => {
@@ -52,32 +52,36 @@ function App() {
 
   const handleVolume = () => {
     let volume = document.getElementsByName("volume")[0].value;
-    let solutionVolumeNew = (volume * ratio) / 100;
-    let waterVolumeNew = (volume * remainder) / 100;
+    let solutionVolumeNew = ((volume * ratio) / 100).toFixed(0)
+    let waterVolumeNew = ((volume * remainder) / 100).toFixed(0);
     setSolutionVolume(solutionVolumeNew);
     setWaterVolume(waterVolumeNew);
   };
   return (
     <div className="w-screen h-screen flex flex-col-reverse justify-center items-center font-mono">
-      <div className="h-full w-full flex flex-col items-center rounded-md">
+      <div className="h-screen  w-full flex flex-col items-center rounded-md">
         <div
           className="w-full text-center bg-sky-200 relative flex items-center justify-center"
           ref={ref2}
         >
-          <div>
+          <div className="text-sm">
             <h1>Water</h1>
-            <h1>{height2 + "%"}</h1>
-            {waterVolume}ml
+            <div className="flex flex-row gap-2">
+              <h1>{height2 + "%"}</h1>
+              <h1>({waterVolume}ml)</h1>
+            </div>
           </div>
         </div>
         <div
           className="w-full text-center bg-green-400 relative flex items-center justify-center"
           ref={ref}
         >
-          <div>
+          <div className="text-sm">
             <h1>Solution</h1>
-            <h1>{height + "%"}</h1>
-            {solutionVolume}ml
+            <div className="flex flex-row gap-2">
+              <h1>{height + "%"}</h1>
+              <h1>({solutionVolume}ml)</h1>
+            </div>
           </div>
         </div>
       </div>
